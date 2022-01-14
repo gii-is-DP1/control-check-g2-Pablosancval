@@ -1,9 +1,11 @@
 package org.springframework.samples.petclinic.feeding;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -15,9 +17,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@Entity
 @Table(name = "feeding_types", uniqueConstraints = @UniqueConstraint(columnNames = {"name"}))
 public class FeedingType extends BaseEntity{
 
+    @NotNull
     @Size(min = 5, max = 30)
 	@Column(name = "name")
     String name;

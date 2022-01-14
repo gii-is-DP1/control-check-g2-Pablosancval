@@ -3,11 +3,15 @@ package org.springframework.samples.petclinic.feeding;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class FeedingService {
 
     @Autowired
     private FeedingRepository feedingRepository;
+
+
     public List<Feeding> getAll(){
         return null;
     }
@@ -21,7 +25,7 @@ public class FeedingService {
     }
 
     public FeedingType getFeedingType(String typeName) {
-        return feedingRepository.findFeedingPlanByName();
+        return feedingRepository.findFeedingPlanByName(typeName);
     }
 
     public Feeding save(Feeding p) throws UnfeasibleFeedingException {

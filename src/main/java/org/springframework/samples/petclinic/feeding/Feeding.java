@@ -6,7 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 
@@ -20,6 +20,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
+@Table(name = "feedings")
 public class Feeding extends BaseEntity{
 
     @NotNull
@@ -29,13 +30,14 @@ public class Feeding extends BaseEntity{
 
     @NotNull
     @Positive
+    @Column(name = "weeks_duration")
     double weeksDuration;
 
     @NotNull
     @ManyToOne
-	@JoinColumn(name = "pet_name")
     Pet pet;
 
     @ManyToOne
+    @JoinColumn(name = "feeding_type_id")
     FeedingType feedingType;
 }
