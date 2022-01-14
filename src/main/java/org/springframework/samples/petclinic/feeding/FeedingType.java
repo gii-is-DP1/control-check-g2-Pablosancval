@@ -2,10 +2,11 @@ package org.springframework.samples.petclinic.feeding;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -26,10 +27,11 @@ public class FeedingType extends BaseEntity{
 	@Column(name = "name")
     String name;
 
-    @NotNull
+    @NotEmpty
     String description;
 
     @NotNull
     @ManyToOne
+    @JoinColumn(name = "pet_type_id")
     PetType petType;
 }
