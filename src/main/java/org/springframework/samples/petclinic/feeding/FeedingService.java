@@ -13,7 +13,7 @@ public class FeedingService {
 
 
     public List<Feeding> getAll(){
-        return null;
+        return feedingRepository.findAll();
     }
 
     public List<Feeding> getAllFeedingPlans(){
