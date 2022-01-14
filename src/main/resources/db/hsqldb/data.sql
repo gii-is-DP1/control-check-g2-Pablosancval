@@ -67,3 +67,10 @@ INSERT INTO feeding(id, start_date, weeks_duration, pet_id, feeding_type_id) VAL
 
 INSERT INTO feeding_type(id, name, description, pet_type_id) VALUES (1, 'High Protein Puppy Food', "Using a standard 8 oz/250 ml measuring cup which contains approximately 112 g of food: For a body weight of 3 - 12, feed with 1/2 to 2/3 cups until 3 months.", 2);
 INSERT INTO feeding_type(id, name, description, pet_type_id) VALUES (2, 'Adult Weight Management', "Chicken and Rice Formula Dry Cat Food. Feed 1 can per 2-1/2 lbs of body weight daily. Adjust as needed. Divide into 2 or more meals.", 1);
+
+
+INSERT INTO product_types(id, name) VALUES (1, 'Accessories');
+INSERT INTO product_types(id, name) VALUES (2, 'Food');
+
+INSERT INTO products(id, name, price, product_type_id) VALUES (1, 'Wonderful dog collar', 17.25, 1);
+INSERT INTO products(id, name, price, product_type_id) VALUES (2, 'Super Kitty Cookies', 50.0, 2);
